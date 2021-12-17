@@ -1,5 +1,5 @@
 # Overview
-This repo is a Log Analytics Module consumable compatible with the CAF LZ. The design philosophy of this consumable is that it is meant to be run by a pipeline, therefore there is a level of abstraction from the user for values which should be set in the answers file (linux-vm.tfvars). The Terraform configuration files are scaffolded at the root of the repo.
+This repo is an easy-to-consume Log Analytics Module.
 
 ------------
 
