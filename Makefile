@@ -2,13 +2,16 @@
 
 SHELL := /bin/bash
 
+
 apply:
-	echo "Calling  apply for log analytics"
+	az group create --name RG-TF-Test-LA --location canadacentral
+	echo "Calling apply for log analytics"
 	terraform init
-	terraform plan -var-file="examples/log-analytics.tfvars"  
-	terraform apply -var-file="examples/log-analytics.tfvars"  -auto-approve
+	terraform apply -var-file="examples/log-analytics.tfvars" -auto-approve
 destroy:
-	terraform destroy -var-file="examples/log-analytics.tfvars"  -auto-approve
+	echo "Calling destroy for log analytics"
+	terraform destroy -var-file="examples/log-analytics.tfvars" -auto-approve
+	az group delete --name RG-TF-Test-LA --yes
 clean:
 	@find . -name terraform.tfstate -type f -exec rm -rf {} +
 	@find . -name terraform.tfstate.backup -type f -exec rm -rf {} +

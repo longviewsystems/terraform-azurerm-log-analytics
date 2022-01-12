@@ -15,15 +15,15 @@ resource "azurerm_security_center_workspace" "logs" {
 }
 
 resource "azurerm_log_analytics_solution" "logs" {
-  count                 = length(var.solutions)
-  solution_name         = var.solutions[count.index].solution_name
+  for_each = toset(var.solutions)
+  solution_name         = each.key
   location              = var.location
   resource_group_name   = var.resource_group_name
   workspace_resource_id = azurerm_log_analytics_workspace.logs.id
   workspace_name        = azurerm_log_analytics_workspace.logs.name
 
   plan {
-    publisher = var.solutions[count.index].publisher
-    product   = var.solutions[count.index].product
+    publisher = "Microsoft"
+    product   = "OMSGallery/${each.key}"
   }
 }
