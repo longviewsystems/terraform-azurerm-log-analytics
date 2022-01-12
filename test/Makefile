@@ -2,6 +2,12 @@
 
 SHELL := /bin/bash
 
+test-test:
+	echo "Calling apply for test"
+	terraform -chdir=./fixture init
+	terraform -chdir=./fixture apply -var-file="../../examples/log-analytics.tfvars" -auto-approve
+	terraform -chdir=./fixture destroy -var-file="../../examples/log-analytics.tfvars" -auto-approve
+
 test-loganalytics:
 	echo "Calling test-loganalytics"
 	go test -v -timeout 45m

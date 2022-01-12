@@ -1,3 +1,3 @@
-output "test_vnet_id" {
-  value = module.network.vnet_id
+output "test_LA" {
+  value = module.LA
 }
