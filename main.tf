@@ -15,7 +15,7 @@ resource "azurerm_security_center_workspace" "logs" {
 }
 
 resource "azurerm_log_analytics_solution" "logs" {
-  for_each = toset(var.solutions)
+  for_each              = toset(var.solutions)
   solution_name         = each.key
   location              = var.location
   resource_group_name   = var.resource_group_name

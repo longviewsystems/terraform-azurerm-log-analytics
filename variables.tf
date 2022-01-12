@@ -1,25 +1,25 @@
 variable "LA_Workspace_Name" {
-  type = string
+  type        = string
   description = "Name of Log Analystics Workspace."
 }
 
 variable "Automation_Account_Name" {
-  type = string
-  description = "Name of Automation Account."  
+  type        = string
+  description = "Name of Automation Account."
 }
 
 variable "resource_group_name" {
-  type = string
+  type        = string
   description = "Name of resource group to deploy resources in."
 }
 
 variable "location" {
-  type = string
+  type        = string
   description = "Azure location where resources should be deployed."
 }
 
 variable "sku" {
-  type = string
+  type        = string
   description = "Specified the Sku of the Log Analytics Workspace."
   default     = "PerGB2018"
 }
@@ -36,10 +36,10 @@ variable "security_center_subscription" {
 }
 
 variable "solutions" {
-  type = list
+  type        = list(any)
   description = "A list of solution names to add to the workspace."
 
-  default     =[
+  default = [
     "AgentHealthAssessment",
     "AntiMalware",
     "AzureActivity",

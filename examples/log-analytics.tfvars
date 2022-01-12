@@ -19,7 +19,7 @@ solutions = [
   "SQLAssessment",
   "Updates",
   "VMInsights"
-] 
+]
 
 security_center_subscription = []
 
