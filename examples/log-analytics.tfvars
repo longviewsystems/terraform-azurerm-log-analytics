@@ -16,5 +16,3 @@ solutions = [
   }
 ]
 security_center_subscription = []
-tenant_id                    = "TBD-TenantId"
-subscription_id              = "TBD-SubscriptionId"

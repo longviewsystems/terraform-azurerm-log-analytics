@@ -1,15 +1,3 @@
-variable "tenant_id" {
-  type        = string
-  description = "Tenant ID"
-  #sample     = "5806bd64-fde5-449f-9a07-############"
-}
-
-variable "subscription_id" {
-  type        = string
-  description = "Subscription ID"
-  #sample  default   = "57215661-2f9e-482f-9334-############"
-}
-
 variable "LA_Workspace_Name" {
   description = "Name of Log Analystics Workspace."
 }
