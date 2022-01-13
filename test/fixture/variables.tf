@@ -1,27 +1,27 @@
 variable "LA_Workspace_Name" {
-  type        = string
+  type = string
 }
 
 variable "Automation_Account_Name" {
-  type        = string
+  type = string
 }
 
 variable "resource_group_name" {
-  type        = string
+  type = string
 }
 
 variable "location" {
-  type        = string
+  type = string
 }
 
 variable "security_center_subscription" {
-  type        = list(string)
+  type = list(string)
 }
 
 variable "solutions" {
-  type        = list(any)
+  type = list(any)
 }
 
 variable "tags" {
-  type        = map(string)
+  type = map(string)
 }
