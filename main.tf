@@ -26,4 +26,6 @@ resource "azurerm_log_analytics_solution" "logs" {
     publisher = "Microsoft"
     product   = "OMSGallery/${each.key}"
   }
+
+  tags = var.tags
 }
