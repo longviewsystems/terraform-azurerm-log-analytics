@@ -12,12 +12,12 @@ resource "azurerm_resource_group" "test" {
 }
 
 module "LA" {
-  source              = "../../"  #testing root module.
-  resource_group_name = azurerm_resource_group.test.name
-  tags = var.tags
-  location            = var.location
-  LA_Workspace_Name   = var.LA_Workspace_Name
-  solutions = var.solutions
+  source                       = "../../" #testing root module.
+  resource_group_name          = azurerm_resource_group.test.name
+  tags                         = var.tags
+  location                     = var.location
+  LA_Workspace_Name            = var.LA_Workspace_Name
+  solutions                    = var.solutions
   security_center_subscription = var.security_center_subscription
-  Automation_Account_Name = var.Automation_Account_Name
+  Automation_Account_Name      = var.Automation_Account_Name
 }
