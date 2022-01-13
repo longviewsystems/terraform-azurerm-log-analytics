@@ -1,3 +1,5 @@
+## [2.0.1](https://github.com/longviewsystems/terraform-azurerm-log-analytics/compare/2.0.0...2.0.1) (2022-01-13)
+
 # [2.0.0](https://github.com/longviewsystems/terraform-azurerm-log-analytics/compare/1.0.0...2.0.0) (2022-01-12)
 
 
