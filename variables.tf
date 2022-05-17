@@ -25,6 +25,7 @@ variable "sku" {
 }
 
 variable "la_retention_in_days" {
+  type        = number
   description = "The workspace data retetion in days. Possible values range between 30 and 730."
   default     = 30
 }
