@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/longviewsystems/terraform-azurerm-log-analytics/compare/2.0.1...2.1.0) (2022-05-17)
+
+
+### Features
+
+* **azboard-22434:** update repo with CMP common tools ([8be6b83](https://github.com/longviewsystems/terraform-azurerm-log-analytics/commit/8be6b83768f041efe80d1ebde8cb5a6d674f87a0))
+
 ## [2.0.1](https://github.com/longviewsystems/terraform-azurerm-log-analytics/compare/2.0.0...2.0.1) (2022-01-13)
 
 # [2.0.0](https://github.com/longviewsystems/terraform-azurerm-log-analytics/compare/1.0.0...2.0.0) (2022-01-12)
