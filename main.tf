@@ -1,9 +1,9 @@
 resource "azurerm_log_analytics_workspace" "logs" {
-  name                = var.LA_Workspace_Name
+  name                = var.la_Workspace_Name
   resource_group_name = var.resource_group_name
   location            = var.location
   sku                 = var.sku
-  retention_in_days   = var.LA_retention_in_days
+  retention_in_days   = var.la_retention_in_days
 
   tags = var.tags
 }
