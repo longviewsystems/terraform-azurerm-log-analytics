@@ -7,7 +7,7 @@ tags = {
 }
 resource_group_name = "RG-TF-Test-LA"
 location            = "canadacentral"
-LA_Workspace_Name   = "Test-Log-Analytics"
+la_workspace_name   = "Test-Log-Analytics"
 solutions = [
   "AgentHealthAssessment",
   "AntiMalware",
@@ -23,4 +23,4 @@ solutions = [
 
 security_center_subscription = []
 
-Automation_Account_Name = "Test-AA-LA"
+automation_account_name = "Test-AA-LA"

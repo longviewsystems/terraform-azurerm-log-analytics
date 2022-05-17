@@ -5,8 +5,6 @@ on:
     branches:
       - main
     paths-ignore:
-      - '**.md'
-      - '**.sh'
       - '.gitignore'
   pull_request:
 
@@ -26,6 +24,40 @@ jobs:
           soft_fail: true
           skip_check: CKV_AZURE_35,CKV_AZURE_44,CKV_AZURE_33,CKV_AZURE_43,CKV2_AZURE_1,CKV2_AZURE_21,CKV2_AZURE_8,CKV2_AZURE_18,CKV_AZURE_50,CKV_AZURE_1
 
+  tflint:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    steps:
+    - uses: actions/checkout@v2
+      name: Checkout source code
+      
+    - uses: actions/cache@v2
+      name: Cache plugin dir
+      with:
+        path: ~/.tflint.d/plugins
+        key: ${{ matrix.os }}-tflint-${{ hashFiles('.tflint.hcl') }}
+
+    - uses: terraform-linters/setup-tflint@v1
+      name: Setup TFLint
+      with:
+        tflint_version: v0.34.1
+
+    - name: Show version
+      run: tflint --version
+
+    - name: Init TFLint
+      run: tflint --init
+
+    - name: Init Terraform
+      run: terraform init
+
+    - name: Run TFLint
+      run: tflint -f compact
+      
   go-tests:
     name: 'Run Terratest | Unit Testing'
     runs-on: ubuntu-latest
@@ -52,10 +84,10 @@ jobs:
           sed -i "s/$TF_VAR_tenant_id/TBD-TenantId/g" ../examples/log-analytics.tfvars
           sed -i "s/$TF_VAR_SubsId/TBD-SubscriptionId/g" ../examples/log-analytics.tfvars
         env:
-          ARM_SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
-          ARM_CLIENT_ID: ${{ secrets.CLIENT_ID }}
-          ARM_CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-          ARM_TENANT_ID: ${{ secrets.TENANT_ID }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.SUB_ID_SUB_LVS_CMP_DEV }}
+          ARM_CLIENT_ID: ${{ secrets.CLIENT_ID_SP_CLOUDMANAGEMENTPLATFORM_PIPELINE_SERVICECONNECTION_DEV }}
+          ARM_CLIENT_SECRET: ${{ secrets.CLIENT_SECRET_SP_CLOUDMANAGEMENTPLATFORM_PIPELINE_SERVICECONNECTION_DEV }}
+          ARM_TENANT_ID: ${{ secrets.TENANT_ID_LVS }}
        
         
 
@@ -89,7 +121,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-node@v1 #Install Node 15 apt repo
         with:
-          node-version: 15.x
+          node-version: 14.x
       - name: Install node modules
         run: |
           npm install npx semantic-release

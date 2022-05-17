@@ -16,8 +16,8 @@ module "LA" {
   resource_group_name          = azurerm_resource_group.test.name
   tags                         = var.tags
   location                     = var.location
-  LA_Workspace_Name            = var.LA_Workspace_Name
+  la_workspace_name            = var.la_workspace_name
   solutions                    = var.solutions
   security_center_subscription = var.security_center_subscription
-  Automation_Account_Name      = var.Automation_Account_Name
+  automation_account_name      = var.automation_account_name
 }

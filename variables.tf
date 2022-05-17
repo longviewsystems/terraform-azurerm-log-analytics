@@ -1,9 +1,9 @@
-variable "LA_Workspace_Name" {
+variable "la_workspace_name" {
   type        = string
   description = "Name of Log Analystics Workspace."
 }
 
-variable "Automation_Account_Name" {
+variable "automation_account_name" {
   type        = string
   description = "Name of Automation Account."
 }
@@ -24,7 +24,8 @@ variable "sku" {
   default     = "PerGB2018"
 }
 
-variable "LA_retention_in_days" {
+variable "la_retention_in_days" {
+  type        = number
   description = "The workspace data retetion in days. Possible values range between 30 and 730."
   default     = 30
 }

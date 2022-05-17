@@ -1,5 +1,5 @@
 resource "azurerm_automation_account" "logs" {
-  name                = var.Automation_Account_Name
+  name                = var.automation_account_name
   resource_group_name = var.resource_group_name
   location            = var.location
 
