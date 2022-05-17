@@ -1,8 +1,8 @@
-variable "LA_Workspace_Name" {
+variable "la_workspace_name" {
   type = string
 }
 
-variable "Automation_Account_Name" {
+variable "automation_account_name" {
   type = string
 }
 
