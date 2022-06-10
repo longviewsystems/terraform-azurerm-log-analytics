@@ -68,12 +68,14 @@ No modules.
 | [azurerm_log_analytics_linked_service.logs](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/log_analytics_linked_service) | resource |
 | [azurerm_log_analytics_solution.logs](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/log_analytics_solution) | resource |
 | [azurerm_log_analytics_workspace.logs](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/log_analytics_workspace) | resource |
+| [azurerm_monitor_diagnostic_setting.sub_diags](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting) | resource |
 | [azurerm_security_center_workspace.logs](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_workspace) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_activity_log_subscriptions"></a> [activity\_log\_subscriptions](#input\_activity\_log\_subscriptions) | List of subscriptions this log analytics should collect Activity Logs (Diagnostic Logs) for. | `map(string)` | `{}` | no |
 | <a name="input_automation_account_name"></a> [automation\_account\_name](#input\_automation\_account\_name) | Name of Automation Account. | `string` | n/a | yes |
 | <a name="input_la_retention_in_days"></a> [la\_retention\_in\_days](#input\_la\_retention\_in\_days) | The workspace data retetion in days. Possible values range between 30 and 730. | `number` | `30` | no |
 | <a name="input_la_workspace_name"></a> [la\_workspace\_name](#input\_la\_workspace\_name) | Name of Log Analystics Workspace. | `string` | n/a | yes |

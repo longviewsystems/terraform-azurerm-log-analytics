@@ -29,3 +29,75 @@ resource "azurerm_log_analytics_solution" "logs" {
 
   tags = var.tags
 }
+
+resource "azurerm_monitor_diagnostic_setting" "sub_diags" {
+  for_each                   = var.activity_log_subscriptions
+  name                       = each.key
+  target_resource_id         = "/subscriptions/${each.value}" //subscriptions/fdd234dc-7c17-4710-958a-2fc1fb7ba842"
+  log_analytics_workspace_id = azurerm_log_analytics_workspace.logs.id
+
+  log {
+    category = "Administrative"
+
+    retention_policy {
+      enabled = false
+    }
+  }
+
+  log {
+    category = "Recommendation"
+
+    retention_policy {
+      enabled = false
+    }
+  }
+
+  log {
+    category = "Alert"
+
+    retention_policy {
+      enabled = false
+    }
+  }
+
+  log {
+    category = "Autoscale"
+
+    retention_policy {
+      enabled = false
+    }
+  }
+
+  log {
+    category = "Policy"
+
+    retention_policy {
+      enabled = false
+    }
+  }
+
+  log {
+    category = "Security"
+
+    retention_policy {
+      enabled = false
+    }
+  }
+
+  log {
+    category = "ServiceHealth"
+
+    retention_policy {
+      enabled = false
+    }
+  }
+
+  log {
+    category = "ResourceHealth"
+
+    retention_policy {
+      enabled = false
+    }
+  }
+
+}

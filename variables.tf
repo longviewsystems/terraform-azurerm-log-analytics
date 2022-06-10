@@ -36,6 +36,17 @@ variable "security_center_subscription" {
   default     = []
 }
 
+variable "activity_log_subscriptions" {
+  description = "List of subscriptions this log analytics should collect Activity Logs (Diagnostic Logs) for."
+  type        = map(string)
+  default = {
+    # SUB-1 = "XXXX-XXXX-49e0-9160-a756147abaa4"
+    # SUB-2 = "XXXX-XXXX-4710-958a-2fc1fb7ba842"
+    # SUB-3 = "XXXX-XXXX-4e2d-b243-4cef0766f9d1"
+  }
+}
+
+
 variable "solutions" {
   type        = list(any)
   description = "A list of solution names to add to the workspace."
