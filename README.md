@@ -47,14 +47,14 @@ $ make clean
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.8 |
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 2.88.1 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >=2.99.0, < 3.0.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 2.91.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 2.99.0 |
 
 ## Modules
 
@@ -74,9 +74,9 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_Automation_Account_Name"></a> [Automation\_Account\_Name](#input\_Automation\_Account\_Name) | Name of Automation Account. | `string` | n/a | yes |
-| <a name="input_LA_Workspace_Name"></a> [LA\_Workspace\_Name](#input\_LA\_Workspace\_Name) | Name of Log Analystics Workspace. | `string` | n/a | yes |
-| <a name="input_LA_retention_in_days"></a> [LA\_retention\_in\_days](#input\_LA\_retention\_in\_days) | The workspace data retetion in days. Possible values range between 30 and 730. | `number` | `30` | no |
+| <a name="input_automation_account_name"></a> [automation\_account\_name](#input\_automation\_account\_name) | Name of Automation Account. | `string` | n/a | yes |
+| <a name="input_la_retention_in_days"></a> [la\_retention\_in\_days](#input\_la\_retention\_in\_days) | The workspace data retetion in days. Possible values range between 30 and 730. | `number` | `30` | no |
+| <a name="input_la_workspace_name"></a> [la\_workspace\_name](#input\_la\_workspace\_name) | Name of Log Analystics Workspace. | `string` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | Azure location where resources should be deployed. | `string` | n/a | yes |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Name of resource group to deploy resources in. | `string` | n/a | yes |
 | <a name="input_security_center_subscription"></a> [security\_center\_subscription](#input\_security\_center\_subscription) | List of subscriptions this log analytics should collect data for. Does not work on free subscription. | `list(string)` | `[]` | no |
@@ -88,7 +88,7 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_LA_name"></a> [LA\_name](#output\_LA\_name) | Log Analytics Workspace id.  This is a guid. |
-| <a name="output_LA_resource_id"></a> [LA\_resource\_id](#output\_LA\_resource\_id) | Resource Id of Log Analytics resource in Azure. |
-| <a name="output_LA_workspace_id"></a> [LA\_workspace\_id](#output\_LA\_workspace\_id) | Log Analytics Workspace id.  This is a guid. |
+| <a name="output_la_name"></a> [la\_name](#output\_la\_name) | Log Analytics Workspace id.  This is a guid. |
+| <a name="output_la_resource_id"></a> [la\_resource\_id](#output\_la\_resource\_id) | Resource Id of Log Analytics resource in Azure. |
+| <a name="output_la_workspace_id"></a> [la\_workspace\_id](#output\_la\_workspace\_id) | Log Analytics Workspace id.  This is a guid. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
