@@ -54,27 +54,6 @@ variable "solutions" {
   ]
 }
 
-# variable "ad_groups_to_create" {
-#   type = map(object({
-#     ad_group_name        = string,
-#     ad_group_description = string,
-#     owners               = list(string)
-#   }))
-#   description = "The list of Management Groups at the second level of the hierarchy, and the subscriptions associated with each one.  The parent should be an Management Group from Level 1."
-#   default = {
-#     "LandingZoneOwners" = {
-#       ad_group_name        = "AzRBAC - Landing Zone Management Group Owners",
-#       ad_group_description = "Members will be owners of the 'Landing Zones' Management Group",
-#       owners               = null
-#     },
-#     "DecommOwners" = {
-#       ad_group_name        = "AzRBAC - Decomissioned Management Group Owners",
-#       ad_group_description = "Members will be owners of the 'Decomissioned' Management Group",
-#       owners               = null
-#     }
-#   }
-# }
-
 variable "tags" {
   description = "Tags to apply to all resources created."
   type        = map(string)
