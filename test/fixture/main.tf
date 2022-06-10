@@ -7,4 +7,5 @@ module "LA" {
   solutions                    = var.solutions
   security_center_subscription = var.security_center_subscription
   automation_account_name      = module.naming.automation_account.name_unique
+  activity_log_subscriptions   = var.activity_log_subscriptions
 }
