@@ -52,16 +52,14 @@ variable "solutions" {
   description = "A list of solution names to add to the workspace."
 
   default = [
-    "AgentHealthAssessment",
-    "AntiMalware",
-    "AzureActivity",
-    "ChangeTracking",
-    "Security",
-    "SecurityInsights",
-    "ServiceMap",
-    "SQLAssessment",
-    "Updates",
-    "VMInsights"
+    # "AgentHealthAssessment",
+    # "AntiMalware",
+    # "AzureActivity",
+    # "ChangeTracking",
+    # "Security",
+    # "SecurityInsights",
+    # "SQLAssessment",
+    # "Updates",
   ]
 }
 
