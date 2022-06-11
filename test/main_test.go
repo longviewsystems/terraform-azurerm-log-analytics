@@ -12,7 +12,7 @@ func TestLogAnalytics(t *testing.T) {
 		TerraformDir: "./fixture",
 
 		// Variables to pass to our Terraform code using -var-file options
-		VarFiles: []string{"../../examples/log-analytics.tfvars"},
+		//VarFiles: []string{"../../examples/log-analytics.tfvars"},
 		
 	}
 
