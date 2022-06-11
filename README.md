@@ -1,44 +1,19 @@
 # Overview
-This repo is an easy-to-consume Log Analytics Module.
-
-------------
-
-# Requirements
-1. Populate the `log-analytics.tfvars` answers file accordingly for your environment. Reference `examples` for a sample.
-2. Ensure `-var-file` in `Makefile` points to a valid `.tfvars` answers file.
-3. In `test/main_test.go`, ensure the `VarFiles` points to a valid `.tfvars` answers file.
-4. In `test/Makefile`, ensure the `Makefile` targets are named accurately to reflect the abstractions of the `go` test suite. 
-5. In `.github/workflows/integration_pipeline.yml`, ensure the `working-directory` path for Terratest is valid `(line # 42,45)` and the `run` command on `line 46` references a valid `Makefile` target. 
-
-------------
-
-# Limitations
-N/A
+This repo creates a Log Analytics Module, and commonly required configurations for Azure Log Analytics.
 
 ------------
 
 # Usage
-To trigger a CI build in Github Actions, submit your dev/feature branch as a pull request (PR).
 
-To trigger terratest in the local environment:
-```bash
-$ cd test
-$ make test-loganalytics
-```
+``` terraform
+module "LA" {
+  source                       = "../../" #testing root module.
+  resource_group_name          = "rg-name"
+  location                     = "westus2"
+  la_workspace_name            = "la-name"
+  automation_account_name      = "automation-name"
+}
 
-To deploy to an Azure tenant:
-```bash
-$ make apply
-```
-
-To destroy the infra in the Azure tenant:
-```bash
-$ make destroy
-```
-
-To cleanup the TF configuration files in your local dev env:
-```bash
-$ make clean
 ```
 
 ------------
@@ -83,7 +58,7 @@ No modules.
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Name of resource group to deploy resources in. | `string` | n/a | yes |
 | <a name="input_security_center_subscription"></a> [security\_center\_subscription](#input\_security\_center\_subscription) | List of subscriptions this log analytics should collect data for. Does not work on free subscription. | `list(string)` | `[]` | no |
 | <a name="input_sku"></a> [sku](#input\_sku) | Specified the Sku of the Log Analytics Workspace. | `string` | `"PerGB2018"` | no |
-| <a name="input_solutions"></a> [solutions](#input\_solutions) | A list of solution names to add to the workspace. | `list(any)` | <pre>[<br>  "AgentHealthAssessment",<br>  "AntiMalware",<br>  "AzureActivity",<br>  "ChangeTracking",<br>  "Security",<br>  "SecurityInsights",<br>  "ServiceMap",<br>  "SQLAssessment",<br>  "Updates",<br>  "VMInsights"<br>]</pre> | no |
+| <a name="input_solutions"></a> [solutions](#input\_solutions) | A list of solution names to add to the workspace. | `list(any)` | `[]` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tags to apply to all resources created. | `map(string)` | `{}` | no |
 
 ## Outputs
