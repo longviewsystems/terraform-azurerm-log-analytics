@@ -43,36 +43,36 @@ resource "azurerm_monitor_diagnostic_setting" "sub_diags" {
 
   log {
     category = "Recommendation"
-    enabled = true
+    enabled  = true
   }
 
   log {
     category = "Alert"
-    enabled = true
+    enabled  = true
   }
 
   log {
     category = "Autoscale"
-    enabled = true
+    enabled  = true
   }
 
   log {
     category = "Policy"
-    enabled = true
+    enabled  = true
   }
 
   log {
     category = "Security"
-    enabled = true
+    enabled  = true
   }
 
   log {
     category = "ServiceHealth"
-    enabled = true
+    enabled  = true
   }
 
   log {
     category = "ResourceHealth"
-    enabled = true
+    enabled  = true
   }
 }
