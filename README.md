@@ -1,6 +1,9 @@
 # Overview
 This repo creates a Log Analytics Module, and commonly required configurations for Azure Log Analytics.
 
+# References
+* [Azure Monitor best practices - Configure data collection](https://docs.microsoft.com/en-us/azure/azure-monitor/best-practices-data-collection)
+
 ------------
 
 # Usage
