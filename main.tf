@@ -38,66 +38,41 @@ resource "azurerm_monitor_diagnostic_setting" "sub_diags" {
 
   log {
     category = "Administrative"
-
-    retention_policy {
-      enabled = false
-    }
+    enabled  = true
   }
 
   log {
     category = "Recommendation"
-
-    retention_policy {
-      enabled = false
-    }
+    enabled = true
   }
 
   log {
     category = "Alert"
-
-    retention_policy {
-      enabled = false
-    }
+    enabled = true
   }
 
   log {
     category = "Autoscale"
-
-    retention_policy {
-      enabled = false
-    }
+    enabled = true
   }
 
   log {
     category = "Policy"
-
-    retention_policy {
-      enabled = false
-    }
+    enabled = true
   }
 
   log {
     category = "Security"
-
-    retention_policy {
-      enabled = false
-    }
+    enabled = true
   }
 
   log {
     category = "ServiceHealth"
-
-    retention_policy {
-      enabled = false
-    }
+    enabled = true
   }
 
   log {
     category = "ResourceHealth"
-
-    retention_policy {
-      enabled = false
-    }
+    enabled = true
   }
-
 }
