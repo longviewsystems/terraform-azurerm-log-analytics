@@ -36,44 +36,32 @@ variable "security_center_subscription" {
   default     = []
 }
 
+variable "activity_log_subscriptions" {
+  description = "List of subscriptions this log analytics should collect Activity Logs (Diagnostic Logs) for."
+  type        = map(string)
+  default = {
+    # SUB-1 = "XXXX-XXXX-49e0-9160-a756147abaa4"
+    # SUB-2 = "XXXX-XXXX-4710-958a-2fc1fb7ba842"
+    # SUB-3 = "XXXX-XXXX-4e2d-b243-4cef0766f9d1"
+  }
+}
+
+
 variable "solutions" {
   type        = list(any)
   description = "A list of solution names to add to the workspace."
 
   default = [
-    "AgentHealthAssessment",
-    "AntiMalware",
-    "AzureActivity",
-    "ChangeTracking",
-    "Security",
-    "SecurityInsights",
-    "ServiceMap",
-    "SQLAssessment",
-    "Updates",
-    "VMInsights"
+    # "AgentHealthAssessment",
+    # "AntiMalware",
+    # "AzureActivity",
+    # "ChangeTracking",
+    # "Security",
+    # "SecurityInsights",
+    # "SQLAssessment",
+    # "Updates",
   ]
 }
-
-# variable "ad_groups_to_create" {
-#   type = map(object({
-#     ad_group_name        = string,
-#     ad_group_description = string,
-#     owners               = list(string)
-#   }))
-#   description = "The list of Management Groups at the second level of the hierarchy, and the subscriptions associated with each one.  The parent should be an Management Group from Level 1."
-#   default = {
-#     "LandingZoneOwners" = {
-#       ad_group_name        = "AzRBAC - Landing Zone Management Group Owners",
-#       ad_group_description = "Members will be owners of the 'Landing Zones' Management Group",
-#       owners               = null
-#     },
-#     "DecommOwners" = {
-#       ad_group_name        = "AzRBAC - Decomissioned Management Group Owners",
-#       ad_group_description = "Members will be owners of the 'Decomissioned' Management Group",
-#       owners               = null
-#     }
-#   }
-# }
 
 variable "tags" {
   description = "Tags to apply to all resources created."

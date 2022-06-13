@@ -76,13 +76,7 @@ jobs:
       - name: 'Run Terratest'
         working-directory: test
         run: |
-          export TF_VAR_tenant_id=$ARM_TENANT_ID
-          export TF_VAR_SubsId=$ARM_SUBSCRIPTION_ID
-          sed -i "s/TBD-TenantId/$TF_VAR_tenant_id/g" ../examples/log-analytics.tfvars
-          sed -i "s/TBD-SubscriptionId/$TF_VAR_SubsId/g" ../examples/log-analytics.tfvars
           make test-loganalytics
-          sed -i "s/$TF_VAR_tenant_id/TBD-TenantId/g" ../examples/log-analytics.tfvars
-          sed -i "s/$TF_VAR_SubsId/TBD-SubscriptionId/g" ../examples/log-analytics.tfvars
         env:
           ARM_SUBSCRIPTION_ID: ${{ secrets.SUB_ID_SUB_LVS_CMP_DEV }}
           ARM_CLIENT_ID: ${{ secrets.CLIENT_ID_SP_CLOUDMANAGEMENTPLATFORM_PIPELINE_SERVICECONNECTION_DEV }}
